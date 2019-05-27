@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>문자열로 Node 변경</title>
+    </head>
+    <body>
+        <h1>Inner HTML</h1>
+        <ul id="target">
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+        <input type="button" onclick="innerGet();" value="get">
+        <input type="button" onclick="innerSet();" value="set">
+        <br>
+        <script type="text/javascript" src="ChangeSTring_Node.js"></script>
+        <hr>
+        
+        <h1>Outer HTML</h1>
+        <ul id="target2">
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+        <input type="button" onclick="outerGet();" value="get">
+        <input type="button" onclick="outerSet();" value="set">
+        <hr>
+
+        <h1>InnerText</h1>
+        <ul id="target3">
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+        <input type="button" onclick="innerTextGet();" value="get">
+        <input type="button" onclick="innerTextSet();" value="get">
+        <hr>
+
+        <h1>InsertAdjacentHTML()</h1>
+        <ul id="target4">
+            <li>CSS</li>
+        </ul>
+        <input type="button" onclick="beforebegin();" value="beforebegin">
+        <input type="button" onclick="afterbegin();" value="afterbegin">
+        <input type="button" onclick="beforeend();" value="beforeend">
+        <input type="button" onclick="afterend();" value="afterend">
+    </body>
+</html>

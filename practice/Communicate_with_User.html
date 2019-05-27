@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM - 사용자와 커뮤니케이션하기</title>
+    </head>
+    <body>
+        <ul>
+        <p>
+            HTML은 form을 통해 사용자와 커뮤니케이션할 수 있는 기능을 제공한다.
+            <br>
+            자바스크립트에는 사용자와 정보를 주고받을 수 있는 간편한 수단을 제공한다.
+        </p>
+        </ul>
+        <ul>
+
+            <h3>alert</h3>
+            <hr class="tx-hr-border-3" style="display:block; border: black 0 none; border-top: black 1px dotted; height: 1px">
+            <p>경고창이라고 부른다. 사용자에게 정보를 제공하거나 디버깅 등의 용도로 많이 사용한다.</p>
+            <div class="colorscripter-code" style="color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px;" cellspacing="0" cellpadding="0"><tbody><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#4be6fa">alert</span>(<span style="color:#ffd500">'Hello&nbsp;World!'</span>);</div></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="color: white;"><span style="font-size: 9px; word-break: normal; background-color: rgb(79, 79, 79); border-radius: 10px; padding: 1px;">cs</span></a></td></tr></tbody></table></div>
+            <input type="button" value="Hello World!" onclick="alert('Hello World!');"/>
+            <input type="button" value="alertfunc();" onclick="alertfunc();"/>
+            <script>
+                function alertfunc() {
+                    alert(1);
+                    alert(2);
+                    alert(3);
+                }
+            </script>
+
+            <h3>confirm</h3>
+            <hr class="tx-hr-border-3" style="display:block; border: black 0 none; border-top: black 1px dotted; height: 1px">
+            <p>확인을 누르면 true, 취소를 누르면 false를 리턴한다.</p>
+            <div class="colorscripter-code" style="color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px;" cellspacing="0" cellpadding="0"><tbody><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">function</span>&nbsp;func_confirm()&nbsp;{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">if</span>(<span style="color:#4be6fa">confirm</span>(<span style="color:#ffd500">'ok?'</span>))&nbsp;{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4be6fa">alert</span>(<span style="color:#ffd500">'ok'</span>);</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;}</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">else</span>&nbsp;{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4be6fa">alert</span>(<span style="color:#ffd500">'cancel'</span>);</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;}</div><div style="padding:0 6px; white-space:pre; line-height:130%">}</div></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="color: white;"><span style="font-size: 9px; word-break: normal; background-color: rgb(79, 79, 79); border-radius: 10px; padding: 1px;">cs</span></a></td></tr></tbody></table></div>
+            <input type="button" value="confirm" onclick="func_confirm()"/>
+            <script>
+                function func_confirm() {
+                    if(confirm('ok?')) { alert('ok'); }
+                    else { alert('cancel'); }
+                }
+            </script>
+
+            <h3>prompt</h3>
+            <hr class="tx-hr-border-3" style="display:block; border: black 0 none; border-top: black 1px dotted; height: 1px">
+            <p>사용자가 입력한 값을 받아서 JavaScript가 얻어낼 수 있는 기능이다.</p>
+            <div class="colorscripter-code" style="color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; position:relative !important; overflow:auto"><table class="colorscripter-code-table" style="margin:0; padding:0; border:none; background-color:#272727; border-radius:4px;" cellspacing="0" cellpadding="0"><tbody><tr><td style="padding:6px; border-right:2px solid #4f4f4f"><div style="margin:0; padding:0; word-break:normal; text-align:right; color:#aaa; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="line-height:130%">1</div><div style="line-height:130%">2</div><div style="line-height:130%">3</div><div style="line-height:130%">4</div><div style="line-height:130%">5</div><div style="line-height:130%">6</div><div style="line-height:130%">7</div><div style="line-height:130%">8</div></div></td><td style="padding:6px 0"><div style="margin:0; padding:0; color:#f0f0f0; font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace !important; line-height:130%"><div style="padding:0 6px; white-space:pre; line-height:130%"><span style="color:#ff3399">function</span>&nbsp;func_prompt()&nbsp;{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">if</span>(prompt(<span style="color:#ffd500">'ID를&nbsp;입력하세요.'</span>)&nbsp;<span style="color:#ff3399">=</span><span style="color:#ff3399">=</span><span style="color:#ff3399">=</span>&nbsp;<span style="color:#ffd500">'kinew'</span>)&nbsp;{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4be6fa">alert</span>(<span style="color:#ffd500">'kinew님&nbsp;안녕하세요!'</span>);</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;}</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#ff3399">else</span>&nbsp;{</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#4be6fa">alert</span>(<span style="color:#ffd500">'ID가&nbsp;kinew가&nbsp;아닙니다.'</span>);</div><div style="padding:0 6px; white-space:pre; line-height:130%">&nbsp;&nbsp;&nbsp;&nbsp;}</div><div style="padding:0 6px; white-space:pre; line-height:130%">}</div></div><div style="text-align:right; margin-top:-13px; margin-right:5px; font-size:9px; font-style:italic"><a href="http://colorscripter.com/info#e" target="_blank" style="color: rgb(79, 79, 79);">Colored by Color Scripter</a></div></td><td style="vertical-align:bottom; padding:0 2px 4px 0"><a href="http://colorscripter.com/info#e" target="_blank" style="color: white;"><span style="font-size: 9px; word-break: normal; background-color: rgb(79, 79, 79); border-radius: 10px; padding: 1px;">cs</span></a></td></tr></tbody></table></div>
+            <input type="button" value="prompt" onclick="func_prompt()"/>
+            <script>
+                function func_prompt() {
+                    if(prompt('ID를 입력하세요.') === 'kinew') {
+                        alert('kinew님 안녕하세요!');
+                    }
+                    else {
+                        alert('ID가 kinew가 아닙니다.');
+                    }
+                }
+            </script>
+
+        </ul>
+    </body>
+</html>

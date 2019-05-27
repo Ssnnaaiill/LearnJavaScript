@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery 조회 범위 제한</title>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    </head>
+    <body>
+        <ul>
+            <li class="marked">HTML</li>
+            <li>CSS</li>
+            <li id="active">
+                JavaScript
+                <ul>
+                    <li>JavaScript Core</li>
+                    <li class="marked">DOM</li>
+                    <li class="marked">BOM</li>
+                </ul>
+            </li>
+        </ul>
+        <script>
+            // $('.marked', '#active').css('background-color', 'pink');
+            // $('#active .marked').css('background-color', 'pink');
+            // $('#active').find('.marked').css('color', 'blue');
+            $('#active').css('color', 'blue').find('.marked').css('background-color', 'pink');
+        </script>
+    </body>
+</html>

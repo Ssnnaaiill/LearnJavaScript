@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NodeRelationAPI</title>
+    </head>
+    <body id="start">
+        <ul>
+            <li><a href="https://facebook.com">HTML</a></li>
+            <li><a href="https://instagram.com">CSS</a></li>
+            <li>
+                <a href="https://twitter.com">JavaScript</a>
+                <ul>
+                    <li><a href="https://facebook.com">JavaScript Core</a></li>
+                    <li><a href="https://instagram.com">DOM</a></li>
+                    <li><a href="https://twitter.com">BOM</a></li>
+                </ul>
+            </li>
+        </ul>
+        <script>
+            s = document.getElementById('start');
+            console.log(1, s.firstChild);                   // #text
+            ul = s.firstChild.nextSibling;
+            console.log(2, ul);                             // ul
+            console.log(3, ul.nextSibling);                 // #text
+            console.log(4, ul.nextSibling.nextSibling);     // script
+            console.log(5, ul.childNodes);                  // text, li, text, li, text, li, text
+            console.log(6, ul.childNodes[1]);               // li(html)
+            console.log(7, ul.parentNode);                  // body
+
+            function traverse(target, callback) {
+                if(target.nodeType === 1) {
+                    // if(target.nodeName === 'A')
+                    callback(target);
+                    c = target.childNodes;
+                    for(i = 0; i < c.length; i++) {
+                        traverse(c[i], callback);
+                    }
+                }
+            }
+
+            traverse(
+                document.getElementById('start'),
+                function(elem) {
+                    console.log(elem);
+                }
+            );
+
+        </script>
+    </body>
+</html>

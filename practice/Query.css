@@ -1,0 +1,19 @@
+#demo {
+    width: 200px;
+    float: left;
+    margin-top: 120px;
+}
+
+#execute {
+    float: left;
+    margin: 0;
+    font-size: 0.9em;
+    padding-left: 5px;
+}
+
+#execute li { list-style: none; }
+
+#execute pre {
+    border: 1px solid gray;
+    padding: 10px;
+}

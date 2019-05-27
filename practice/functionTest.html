@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>기능 테스트</title>
+    </head>
+    <body>
+        <ul>
+            <h3>기능 테스트</h3>
+            <hr style="display:block; border: black 0 none; border-top: black 1px dotted; height: 1px">
+            <p>
+                Navigator 객체는 브라우저 호환성을 위해서 주로 사용하지만 모든 브라우저에 대응하는 것은 쉬운 일이 아니다. <br>
+                따라서 아래와 같이 기능 테스트를 사용하는 것이 더 선호되는 방법이다.
+            </p>
+            <p>
+                예를 들어 <strong>Object.keys</strong>라는 메소드는 객체의 key 값을 배열로 return하는 Object의 메소드이다. <br>
+                이 메소드는 ECMAScript5에 추가되었기 때문에 오래된 JavaScript와는 호환되지 않는다. 아래의 코드를 통해 호환성을 맞출 수 있다<div class=""></div>
+            </p>
+            <script>
+                if(!Object.keys) {
+                    // Object 객체에 keys라는 메소드가 없을 때 Object.keys 이름의 메소드를 새로 정의.
+                    Object.keys = (function() {
+                        'use strict';
+                        var hasOwnProperty = Object.prototype.hasOwnProperty,
+                            hasDontEnumBug = !({toString:null}).propertyIsEnumerable('toString'),
+                            dontEnums = [
+                                'toString',
+                                'toLocaleString',
+                                'valueOf',
+                                'hasOwnProperty',
+                                'isPrototypeOf',
+                                'propertyIsEnumerable',
+                                'constructor',
+                            ],
+                            dontEnumsLength = dontEnums.length;
+                        
+                        return function(obj) {
+                            if(typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+                                throw new TypeError('Object.keys called on non-object');
+                            }
+
+                            var result = [], prop, i;
+
+                            for(prop in obj) {
+                                if(hasOwnProperty.call(obj, prop)) {
+                                    result.push(dontEnums[i]);
+                                }
+                            }
+
+                            if(hasDontEnumBug) {
+                                for(i = 0; i < dontEnumsLength; i++) {
+                                    if(hasOwnProperty.call(obj, dontEnums[i])) {
+                                        result.push(dontEnums[i]);
+                                    }
+                                }
+                            }
+                            return result;
+                        };
+                    }());
+                }
+            </script>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>숫자와 문자</title>
+    </head>
+    <body>
+        <ul>
+            <h3>숫자</h3>
+            <hr class="tx-hr-border-3" style="display:block; border: black 0 none; border-top: black 1px dotted; height: 1px">
+            <p>JavaScript에서는 큰따옴표나 작은따옴표가 붙지 않은 숫자는 숫자로 인식한다.</p>
+            <input type="button" value="사칙연산" onclick="numbers();"/>
+            <script>
+                function numbers() {
+                    alert(1 + 1);
+                    alert(1.2 + 1.3);
+                    alert(3 * 3);
+                    alert(6 / 2);
+                }
+            </script>
+            <p>Math.pow를 이용한 수의 연산</p>
+            <input type="button" value="Math.pow()" onclick="math();"/>
+            <script>
+                function math() {
+                    alert(Math.pow(3, 2));
+                }
+            </script>
+        </ul>
+    </body>
+</html>
