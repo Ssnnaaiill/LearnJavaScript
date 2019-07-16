@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>메일로 문의</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <h1>레이어 팝업창 띄우기</h1>
+    <button class="trigger">Send Email</button>
+
+    <!-- Popup Layer -->
+    <div class="modal">
+        <div class="modal-contant">
+            <span class="close-button">&times;</span>
+            <h1 class="title">메일 보내기</h1>
+            <form action="#post.php" method="POST">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Your email" required="required">
+                <label></label>
+                <textarea name="message" placeholder="Test Message" required="required"></textarea>
+                <input type="button" id="cancel" value="취소">
+                <input type="submit" id="submit" value="보내기">
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript" href="index.js"></script>
+</body>
+</html>
